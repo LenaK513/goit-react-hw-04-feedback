@@ -8,4 +8,9 @@ export const Btn = styled.button`
   margin-right: 5px;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.06),
     1px 6px 10px rgba(0, 0, 0, 0.06);
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: blue;
+  }
 `;
