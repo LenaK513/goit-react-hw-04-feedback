@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <>
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={['Good', 'Neutral', 'Bad']}
           onLeaveFeedback={this.handleIncrement}
         />
         <Statistics

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Btn } from './Feedback.styled';
-export const FeedbackOptions = ({ onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div>
       <h1>Please leave feedback</h1>
       <div>
         <Btn type="button" name="good" onClick={onLeaveFeedback}>
-          Good
+          {options[0]}
         </Btn>
         <Btn type="button" name="neutral" onClick={onLeaveFeedback}>
-          Neutral
+          {options[1]}
         </Btn>
         <Btn type="button" name="bad" onClick={onLeaveFeedback}>
-          Bad
+          {options[2]}
         </Btn>
       </div>
 
