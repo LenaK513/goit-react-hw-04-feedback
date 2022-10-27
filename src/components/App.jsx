@@ -2,7 +2,7 @@ import React from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { SectionMain } from './SectionMain/SectionMain';
-
+import { Notification } from './Notification';
 class App extends React.Component {
   state = {
     good: 0,
@@ -40,13 +40,17 @@ class App extends React.Component {
           />
         </SectionMain>
         <SectionMain title={'Statistics'}>
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={this.countTotalFeedback}
-            positivePercentage={this.countPositiveFeedbackPercentage}
-          />
+          {this.handleIncrement && this.state > 0 ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={this.countTotalFeedback}
+              positivePercentage={this.countPositiveFeedbackPercentage}
+            />
+          ) : (
+            <Notification />
+          )}
         </SectionMain>
       </>
     );
