@@ -40,7 +40,7 @@ class App extends React.Component {
           />
         </SectionMain>
         <SectionMain title={'Statistics'}>
-          {this.handleIncrement && this.state > 0 ? (
+          {this.state.true && this.handleIncrement ? (
             <Statistics
               good={good}
               neutral={neutral}
