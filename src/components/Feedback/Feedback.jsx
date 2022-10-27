@@ -15,7 +15,8 @@ class Feedback extends React.Component {
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
-    return good + neutral + bad;
+    let total = good + neutral + bad;
+    return total;
   };
 
   render() {
@@ -51,7 +52,7 @@ class Feedback extends React.Component {
             <span>{this.state.bad}</span>
           </p>
           <p>
-            Total :<span>{this.countTotalFeedbackstate}</span>
+            Total :<span>{this.countTotalFeedback()}</span>
           </p>
           <p>
             Positive feedback :<span>43%</span>
