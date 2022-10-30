@@ -11,6 +11,7 @@ class App extends React.Component {
   };
 
   handleIncrement = event => {
+    console.log(event.target.name);
     this.setState(prevState => ({
       [event.target.name]: prevState[event.target.name] + 1,
     }));
@@ -25,7 +26,7 @@ class App extends React.Component {
   countPositiveFeedbackPercentage = () => {
     const { good, neutral, bad } = this.state;
 
-    let goodResult = Math.round((good / (good + neutral + bad)) * 100);
+    let goodResult = Number(Math.round((good / (good + neutral + bad)) * 100));
     return goodResult;
   };
 
@@ -35,7 +36,7 @@ class App extends React.Component {
       <>
         <SectionMain title={'Please leave feedback'}>
           <FeedbackOptions
-            options={['Good', 'Neutral', 'Bad']}
+            options={['good', 'neutral', 'bad']}
             onLeaveFeedback={this.handleIncrement}
           />
         </SectionMain>

@@ -1,18 +1,15 @@
 import React from 'react';
-import { Btn } from './Feedback.styled';
+// import { nanoid } from 'nanoid';
+import { Btn } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div>
-      <Btn type="button" name="good" onClick={onLeaveFeedback}>
-        {options[0]}
-      </Btn>
-      <Btn type="button" name="neutral" onClick={onLeaveFeedback}>
-        {options[1]}
-      </Btn>
-      <Btn type="button" name="bad" onClick={onLeaveFeedback}>
-        {options[2]}
-      </Btn>
+      {options.map(option => (
+        <Btn key={option} type="button" name={option} onClick={onLeaveFeedback}>
+          {option}
+        </Btn>
+      ))}
     </div>
   );
 };
