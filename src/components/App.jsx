@@ -11,7 +11,6 @@ class App extends React.Component {
   };
 
   handleIncrement = event => {
-    console.log(event.target.name);
     this.setState(prevState => ({
       [event.target.name]: prevState[event.target.name] + 1,
     }));
@@ -31,6 +30,8 @@ class App extends React.Component {
   };
 
   render() {
+    const totalForFB = this.countTotalFeedback();
+    const posititvePersent = this.countPositiveFeedbackPercentage();
     const { good, neutral, bad } = this.state;
     return (
       <>
@@ -47,8 +48,8 @@ class App extends React.Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={this.countTotalFeedback}
-              positivePercentage={this.countPositiveFeedbackPercentage}
+              total={totalForFB}
+              positivePercentage={posititvePersent}
             />
           ) : (
             <Notification />
